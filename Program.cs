@@ -2,34 +2,48 @@
 
 class Program
 {
+    public class Matricula
+    {
+        public int Numero { get; set; } = 0;
+        public string Solicitante { get; set; } = "";
+        public string Status { get; set; } = "";
+        public string Responsavel { get; set; } = "";
+    }
+
     static void Main(string[] args)
     {
-        // Defina o contexto da licença
-        ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // Ou LicenseContext.Commercial se aplicável
+        ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
-        // Caminho do arquivo .xlsx
         var filePath = @"C:\Users\Charles\Desktop\Matriculas\DB.xlsx";
 
-        // Carregar o arquivo
+        List<Matricula> matriculas = new List<Matricula>();
+
         FileInfo fileInfo = new FileInfo(filePath);
         using (var package = new ExcelPackage(fileInfo))
         {
-            // Selecionar a primeira planilha
             var worksheet = package.Workbook.Worksheets[0];
 
-            //// Ler dados de uma célula específica
-            //var cellValue = worksheet.Cells[2,2].Text; // Linha 1, Coluna 1
-            //Console.WriteLine(cellValue);
-
-            // Para ler um intervalo de células
-            for (int row = 1; row <= worksheet.Dimension.End.Row; row++)
+            for (int row = 2; row <= worksheet.Dimension.End.Row; row++)
             {
-                for (int col = 1; col <= worksheet.Dimension.End.Column; col++)
+                var matricula = new Matricula
                 {
-                    Console.Write(worksheet.Cells[row, col].Text + "\t");
-                }
-                Console.WriteLine();
+                    Numero = int.TryParse(worksheet.Cells[row, 1].Text, out int numero) ? numero : 0, // Numero
+                    Solicitante = worksheet.Cells[row, 2].Text, // Solicitante
+                    Status = worksheet.Cells[row, 3].Text, // Status
+                    Responsavel = worksheet.Cells[row, 4].Text // Responsável 
+                };
+
+                matriculas.Add(matricula);
             }
+        }
+
+        var arrayDeMatricula = matriculas.ToArray();
+
+        Console.WriteLine("Número\tSolicitante\tStatus\tResponsável");
+        Console.WriteLine("----------------------------------------------------");
+        foreach (var matricula in arrayDeMatricula)
+        {
+            Console.WriteLine($"{matricula.Numero}\t{matricula.Solicitante}\t{matricula.Status}\t{matricula.Responsavel}");
         }
     }
 }

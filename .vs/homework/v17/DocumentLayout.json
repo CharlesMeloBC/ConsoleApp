@@ -29,8 +29,7 @@
               "RelativeToolTip": "..\\..\\..\\.nuget\\packages\\epplus\\7.3.2\\readme.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-09-28T22:43:44.558Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-28T22:43:44.558Z"
             },
             {
               "$type": "Document",
@@ -38,9 +37,9 @@
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Charles\\Desktop\\Matriculas\\homework\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Charles\\Desktop\\Matriculas\\homework\\Program.cs*",
-              "RelativeToolTip": "Program.cs*",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAowCoAAAAkAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Charles\\Desktop\\Matriculas\\homework\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAmwDAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-28T22:41:28.872Z",
               "EditorCaption": ""
